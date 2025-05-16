@@ -11,22 +11,33 @@ import extensionsData from '@/data/data.json';
 
 export const useExtensionStore = defineStore('extensionStore', {
   state: () => ({
-    // Define your state properties here
-    extensions: [...extensionsData]
+    extensions: [...extensionsData],
+    filter: 'all' // 'all' | 'active' | 'inactive'
   }),
   getters: {
-    // Define your getters here
-    getExtensionById: (state) => (id) => {
-      return state.extensions.find((ext) => ext.id === id);
-    },
+    filteredExtensions(state) {
+      if (state.filter === 'active') {
+        return state.extensions.filter(ext => ext.isActive)
+      } else if (state.filter === 'inactive') {
+        return state.extensions.filter(ext => !ext.isActive)
+      }
+      return state.extensions
+    }
   },
   actions: {
-    // Define your actions here
-    addExtension(extension) {
-      this.extensions.push(extension);
+    setFilter(filterValue) {
+      this.filter = filterValue
     },
-    removeExtension(id) {
-      this.extensions = this.extensions.filter((ext) => ext.id !== id);
+
+    removeExtension(name) {
+      this.extensions = this.extensions.filter(ext => ext.name !== name)
     },
+
+    toggleExtensionState(name) {
+      const ext = this.extensions.find(ext => ext.name === name)
+      if (ext) {
+        ext.isActive = !ext.isActive
+      }
+    }
   },
 });

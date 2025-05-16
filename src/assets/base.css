@@ -21,8 +21,22 @@
 
   /* 🖋 Typography */
   --font-body: 'Noto Sans', sans-serif;
-  --font-size-body: 16px; /*todo 1 rem?*/
 
+  /*todo 1 rem?*/
+  --text-logo: 16px;
+  --text-heading: 20px;
+  --text-card-title: 16px;
+  --text-body: 16px;
+  --text-small: 14px;
+  --text-caption: 12px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+
+  --spacing-xxs: 6px;
   --spacing-xs: 8px;
   --spacing-sm: 12px;
   --spacing-md: 16px;
@@ -31,17 +45,6 @@
 
   --border-radius-sm: 8px;
   --border-radius-md: 16px;
-
-  --text-logo: 20px;
-  --text-heading: 20px;
-  --text-card-title: 16px;
-  --text-body: 14px;
-  --text-small: 12px;
-
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
 }
 
 
@@ -71,17 +74,29 @@
 /* semantic color variables for this project */
 :root {
 
-  --color-background: var(--gradient-light);
+  --color-bg: var(--gradient-light);
   --color-text: var(--neutral-900);
-  --color-el-background: var(--neutral-0);
-  --color-el-background-variant: var(--neutral-100);
-  --color-el-background-variant-hover: var(--neutral-200);
+  --color-el-bg: var(--neutral-0);
+  --color-el-bg-variant: var(--neutral-100);
+  --color-el-bg-variant-hover: var(--neutral-300);
   --focus-ring-color: var(--red-400);
 
+  /* buttons */
+  --btn-hover-opacity: 0.8;
 
-  /* --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+  --color-btn-bg: var(--neutral-0);
+  --color-btn-bg-hover: var(--neutral-0);
+  --color-btn-text: var(--neutral-900);
+  --color-btn-border: var(--neutral-200);
+
+  --color-btn-danger-bg: var(--red-500);
+  --color-btn-danger-bg-hover: var(--red-500);
+  --color-btn-danger-border: var(--red-500);
+  --color-btn-danger-text: var(--neutral-0);
+
+  /* --color-bg: var(--vt-c-white);
+  --color-bg-soft: var(--vt-c-white-soft);
+  --color-bg-mute: var(--vt-c-white-mute);
 
   --color-border: var(--vt-c-divider-light-2);
   --color-border-hover: var(--vt-c-divider-light-1);
@@ -109,20 +124,33 @@
 }
 
 .dark {
-  --color-background: var(--gradient-dark);
+  --color-bg: var(--gradient-dark);
   --color-text: var(--neutral-0);
-  --color-el-background: var(--neutral-800);
-  --color-el-background-variant: var(--neutral-700);
-  --color-el-background-variant-hover: var(--neutral-600);
+  --color-el-bg: var(--neutral-800);
+  --color-el-bg-variant: var(--neutral-700);
+  --color-el-bg-variant-hover: var(--neutral-600);
   --focus-ring-color: var(--red-500);
+
+  /* buttons */
+  --btn-hover-opacity: 1;
+
+  --color-btn-bg: var(--neutral-700);
+  --color-btn-bg-hover: var(--neutral-600);
+  --color-btn-text: var(--neutral-0);
+  --color-btn-border: var(--neutral-600);
+
+  --color-btn-danger-bg: var(--red-400);
+  --color-btn-danger-bg-hover: var(--red-500);
+  --color-btn-danger-border: var(--red-400);
+  --color-btn-danger-text: var(--neutral-900);
 }
 
 /* @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--gradient-dark);
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
+    --color-bg: var(--gradient-dark);
+    --color-bg: var(--vt-c-black);
+    --color-bg-soft: var(--vt-c-black-soft);
+    --color-bg-mute: var(--vt-c-black-mute);
 
     --color-border: var(--vt-c-divider-dark-2);
     --color-border-hover: var(--vt-c-divider-dark-1);
@@ -139,7 +167,7 @@
   margin: 0;
 }
 
-h1 {
+h1, h2 {
   all: unset;
 }
 
@@ -152,13 +180,13 @@ h1 {
 
 body {
   color: var(--color-text);
-  background: var(--color-background);
+  background: var(--color-bg);
   transition:
     color 0.5s,
     background-color 0.5s;
 
   font-family: var(--font-body);
-  font-size: var(--font-size-body);
+  font-size: var(--text-body);
   margin: 0;
   padding: 0;
 }
@@ -185,7 +213,7 @@ h2 {
 /* body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background);
+  background: var(--color-bg);
   transition:
     color 0.5s,
     background-color 0.5s;

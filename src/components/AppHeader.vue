@@ -20,7 +20,7 @@ import IconLogo from '@/components/icons/IconLogo.vue';
   align-items: center;
   padding: var(--spacing-sm);
   min-height: 56px;
-  background-color: var(--color-el-background);
+  background-color: var(--color-el-bg);
   border-radius: var(--border-radius-md);
   user-select: none;
 }

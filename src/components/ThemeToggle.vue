@@ -31,7 +31,7 @@ const tooltip = computed(() =>
 <style scoped>
 .theme-toggle {
   line-height: 0;
-  background-color: var(--color-el-background-variant);
+  background-color: var(--color-el-bg-variant);
   border: none;
   cursor: pointer;
   padding: var(--spacing-xs);
@@ -40,7 +40,7 @@ const tooltip = computed(() =>
 }
 
 .theme-toggle:hover {
-  background-color: var(--color-el-background-variant-hover);
+  background-color: var(--color-el-bg-variant-hover);
 }
 
 .icon {

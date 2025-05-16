@@ -1,75 +1,72 @@
 <template>
   <button
-    :class="[
-      'ui-button',
-      variantClass,
-      { active, 'with-text': !!text }
-    ]"
+    :class="classes"
+    type="button"
     @click="$emit('press')"
   >
-    <span v-if="text">{{ text }}</span>
+    <span>{{ text }}</span>
   </button>
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
 const props = defineProps({
   text: String,
   variant: {
     type: String,
-    default: 'default' // 'default' | 'hover' | 'danger'
-  },
-  active: {
-    type: Boolean,
-    default: false
+    default: 'default',
+    validator: value => ['default', 'danger'].includes(value)
   }
 })
 
-const variantClass = {
-  default: 'variant-default',
-  hover: 'variant-hover',
-  danger: 'variant-danger'
-}[props.variant]
+const classes = computed(() => [
+  'ui-button',
+  {
+    'variant-default': props.variant === 'default',
+    'variant-danger': props.variant === 'danger'
+  }
+])
 
 </script>
 
 <style scoped>
 .ui-button {
-  border-radius: 999px;
-  padding: 0.4rem 1rem;
-  font-weight: 500;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xxs) var(--spacing-sm);
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-medium);
   font-family: inherit;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
-  font-size: 14px;
   border: 1px solid transparent;
   transition: all 0.3s ease;
   cursor: pointer;
   user-select: none;
-  background-color: var(--color-el-background);
+}
+
+.ui-button:hover {
+  opacity: var(--btn-hover-opacity);
 }
 
 .variant-default {
-  background-color: var(--neutral-700);
-  color: var(--neutral-0);
-  border-color: var(--neutral-600);
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  border-color: var(--color-btn-border);
 }
 
-.variant-hover:hover {
-  background-color: transparent;
-  color: var(--red-400);
-  border-color: var(--red-400);
+.variant-default:hover {
+  background-color: var(--color-btn-bg-hover);
 }
 
 .variant-danger {
-  background-color: var(--red-500);
-  color: var(--neutral-0);
+  background-color: var(--color-btn-danger-bg);
+  color: var(--color-btn-danger-text);
+  border-color: var(--color-btn-danger-border);
 }
 
-.active {
-  background-color: var(--red-500) !important;
-  color: var(--neutral-0);
-  border-color: var(--red-500);
+.variant-danger:hover {
+  background-color: var(--color-btn-danger-bg-hover);
 }
 </style>
