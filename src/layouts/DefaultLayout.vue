@@ -1,9 +1,11 @@
 <template>
   <div class="default-layout">
-    <AppHeader />
-    <main class="main-content">
-      <router-view />
-    </main>
+    <div class="page-content">
+      <AppHeader />
+      <main class="main-content">
+        <router-view />
+      </main>
+    </div>
   </div>
 </template>
 
@@ -16,6 +18,11 @@ import AppHeader from '@/components/AppHeader.vue'
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  min-width: 100vw;
+}
+
+.page-content {
   padding: var(--spacing-lg);
   max-width: 800px;
 }

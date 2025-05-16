@@ -33,8 +33,10 @@ const options = [
 .extensions-toolbar {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 1rem;
+  gap: var(--spacing-md);
 }
 
 .extensions-filter {
@@ -50,5 +52,16 @@ const options = [
 .control-btn {
   font-size: var(--text-small);
   font-weight: var(--font-weight-medium);
+}
+
+@media (max-width: 600px) {
+  .extensions-toolbar {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* .header-title {
+    width: 100%;
+  } */
 }
 </style>
