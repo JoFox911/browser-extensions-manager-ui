@@ -17,25 +17,29 @@ const props = defineProps({
     type: String,
     default: 'default',
     validator: value => ['default', 'danger'].includes(value)
+  },
+  active: {
+    type: Boolean,
+    default: false
   }
 })
 
 const classes = computed(() => [
   'ui-button',
   {
-    'variant-default': props.variant === 'default',
-    'variant-danger': props.variant === 'danger'
+    'variant-default': props.variant === 'default' && !props.active,
+    'variant-danger': props.variant === 'danger',
+    'is-active': props.active
   }
 ])
-
 </script>
 
 <style scoped>
 .ui-button {
-  border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-lg);
   padding: var(--spacing-xxs) var(--spacing-sm);
-  font-size: var(--text-small);
-  font-weight: var(--font-weight-medium);
+  font-size: inherit;
+  font-weight: inherit;
   font-family: inherit;
   display: inline-flex;
   align-items: center;
@@ -50,7 +54,14 @@ const classes = computed(() => [
   opacity: var(--btn-hover-opacity);
 }
 
-.variant-default {
+.is-active {
+  background-color: var(--color-btn-danger-bg);
+  color: var(--color-btn-danger-text);
+  border-color: var(--color-btn-danger-border);
+}
+
+.variant-default,
+.variant-danger {
   background-color: var(--color-btn-bg);
   color: var(--color-btn-text);
   border-color: var(--color-btn-border);
@@ -60,13 +71,10 @@ const classes = computed(() => [
   background-color: var(--color-btn-bg-hover);
 }
 
-.variant-danger {
-  background-color: var(--color-btn-danger-bg);
-  color: var(--color-btn-danger-text);
-  border-color: var(--color-btn-danger-border);
-}
-
-.variant-danger:hover {
+.variant-danger:hover,
+.is-active:hover {
   background-color: var(--color-btn-danger-bg-hover);
+  border-color: var(--color-btn-danger-bg-hover);
+  color: var(--color-btn-danger-text);
 }
 </style>

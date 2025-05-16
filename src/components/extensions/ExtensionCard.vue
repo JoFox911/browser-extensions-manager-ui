@@ -1,15 +1,17 @@
 <template>
   <div class="extension-card">
-    <!-- <img src="@/assets/images/logo-devlens.svg" :alt="extension.name" class="extension-logo" /> -->
-    <img :src="extension.logo" :alt="extension.name" class="extension-logo" />
+    <div class="extension-data">
+      <img :src="extension.logo" :alt="extension.name" class="extension-logo" />
 
-    <div class="extension-info">
-      <h3 class="extension-name">{{ extension.name }}</h3>
-      <p class="extension-description">{{ extension.description }}</p>
+      <div class="extension-info">
+        <h3 class="extension-name">{{ extension.name }}</h3>
+        <p class="extension-description">{{ extension.description }}</p>
+      </div>
     </div>
 
+
     <div class="extension-controls">
-      <UiButton text="Remove" @press="$emit('remove')" />
+      <UiButton class="remove-btn" text="Remove" variant="danger" @press="$emit('remove')" />
       <UiToggle :model-value="extension.isActive" @update:modelValue="$emit('toggle')" />
     </div>
   </div>
@@ -30,21 +32,31 @@ defineProps({
 <style scoped>
 .extension-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  background-color: var(--color-el-background);
-  padding: 1rem;
+  gap: var(--spacing-sm);
+  background-color: var(--color-el-bg);
+  padding: var(--spacing-md);
   border-radius: var(--border-radius-lg);
   border: 1px solid var(--color-el-border);
   transition: background-color 0.3s ease;
+  box-shadow: var(--color-box-shadow);
+}
+
+.extension-data {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1;
 }
 
 .extension-logo {
   width: 40px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: var(--border-radius-sm);
   object-fit: cover;
-  background-color: #b3d7ea; /* fallback */
 }
 
 .extension-info {
@@ -54,22 +66,27 @@ defineProps({
 
 .extension-name {
   margin: 0;
-  font-size: var(--text-md);
+  font-size: var(--text-body);
   font-weight: var(--font-weight-semibold);
-  color: var(--text-primary);
 }
 
 .extension-description {
   margin: 0.2rem 0 0;
-  font-size: var(--text-sm);
-  color: var(--text-secondary);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-regular);
+  color: var(--neutral-300);
 }
 
 .extension-controls {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
+}
+
+.remove-btn {
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-regular);
 }
 </style>

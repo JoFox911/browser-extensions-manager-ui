@@ -6,9 +6,10 @@
       <UiButton
         v-for="option in options"
         :key="option.value"
+        class="control-btn"
         :text="option.label"
-        :variant="option.value === extensionStore.filter ? 'danger' : 'default'"
         :aria-pressed="option.value === extensionStore.filter"
+        :active="option.value === extensionStore.filter"
         @click="extensionStore.setFilter(option.value)"
       />
     </div>
@@ -44,5 +45,10 @@ const options = [
 .header-title {
   font-size: var(--text-heading);
   font-weight: var(--font-weight-semibold);
+}
+
+.control-btn {
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-medium);
 }
 </style>

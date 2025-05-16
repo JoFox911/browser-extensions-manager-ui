@@ -3,7 +3,7 @@ import extensionsData from '@/data/data.json';
 
 // Sample data structure for extensions
 // {
-//   "logo": "./assets/images/logo-devlens.svg",
+//   "logo": "/images/logo-devlens.svg",
 //   "name": "DevLens",
 //   "description": "Quickly inspect page layouts and visualize element boundaries.",
 //   "isActive": true

@@ -24,11 +24,11 @@
 
   /*todo 1 rem?*/
   --text-logo: 16px;
-  --text-heading: 20px;
+  --text-heading: 24px;
   --text-card-title: 16px;
-  --text-body: 16px;
+  --text-body: 14px;
   --text-small: 14px;
-  --text-caption: 12px;
+  --text-caption: 11px;
 
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -44,32 +44,9 @@
   --spacing-xl: 32px;
 
   --border-radius-sm: 8px;
-  --border-radius-md: 16px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
 }
-
-
-/* color palette from <https://github.com/vuejs/theme> */
-/* :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
-
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-} */
 
 /* semantic color variables for this project */
 :root {
@@ -77,9 +54,11 @@
   --color-bg: var(--gradient-light);
   --color-text: var(--neutral-900);
   --color-el-bg: var(--neutral-0);
+  --color-el-border: var(--neutral-100);
   --color-el-bg-variant: var(--neutral-100);
   --color-el-bg-variant-hover: var(--neutral-300);
-  --focus-ring-color: var(--red-400);
+  --color-focus-ring: var(--red-400);
+  --color-box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 4px;
 
   /* buttons */
   --btn-hover-opacity: 0.8;
@@ -94,42 +73,18 @@
   --color-btn-danger-border: var(--red-500);
   --color-btn-danger-text: var(--neutral-0);
 
-  /* --color-bg: var(--vt-c-white);
-  --color-bg-soft: var(--vt-c-white-soft);
-  --color-bg-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px; */
-
-
-
-  /* --bg-app: #eef8f9;
-  --bg-card: #ffffff;
-  --text-primary: #0a0a1f;
-  --text-secondary: #4c4c66;
-  --border-color: #d3dce6;
-
-  --filter-bg: #ffffff;
-  --filter-text: #4c4c66;
-  --filter-active: hsl(3, 71%, 56%);
-
-  --remove-bg: hsl(3, 71%, 56%);
-  --switch-bg: #ccc;
-  --switch-circle: #fff; */
+  --color-toggle-bg: var(--neutral-300);
 }
 
 .dark {
   --color-bg: var(--gradient-dark);
   --color-text: var(--neutral-0);
   --color-el-bg: var(--neutral-800);
+  --color-el-border: var(--neutral-600);
   --color-el-bg-variant: var(--neutral-700);
   --color-el-bg-variant-hover: var(--neutral-600);
-  --focus-ring-color: var(--red-500);
+  --color-focus-ring: var(--red-500);
+  --color-box-shadow: none;
 
   /* buttons */
   --btn-hover-opacity: 1;
@@ -143,22 +98,9 @@
   --color-btn-danger-bg-hover: var(--red-500);
   --color-btn-danger-border: var(--red-400);
   --color-btn-danger-text: var(--neutral-900);
+
+  --color-toggle-bg: var(--neutral-600);
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: var(--gradient-dark);
-    --color-bg: var(--vt-c-black);
-    --color-bg-soft: var(--vt-c-black-soft);
-    --color-bg-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
-} */
 
 *,
 *::before,
@@ -172,7 +114,7 @@ h1, h2 {
 }
 
 :focus-visible {
-  outline: 1px solid var(--focus-ring-color);
+  outline: 1px solid var(--color-focus-ring);
   outline-offset: 2px;
 }
 
@@ -194,19 +136,6 @@ body {
 button {
   color: var(--color-text);
 }
-
-
-
-/* h1 {
-  font-size: 2rem;
-  font-size: var(--text-logo);
-  font-weight: var(--font-weight-semibold);
-}
-
-h2 {
-  font-size: 1.5rem;
-} */
-
 
 
 

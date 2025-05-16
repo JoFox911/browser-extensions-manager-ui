@@ -2,8 +2,8 @@
   <div class="extensions-page">
     <ExtensionsHeader />
     <div class="extensions-list">
-
       <ExtensionCard
+        class="extension-card"
         v-for="extension in extensionStore.filteredExtensions"
         :key="extension.name"
         :extension="extension"
@@ -27,6 +27,20 @@ const extensionStore = useExtensionStore()
 <style scoped>
 .extensions-page {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 40px;
 }
+
+.extensions-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin: auto;
+}
+
+.extension-card {
+  flex: 1 0 calc(33.333% - var(--spacing-md));
+  min-width: 200px;
+}
+
 </style>

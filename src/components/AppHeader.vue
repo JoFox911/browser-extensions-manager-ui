@@ -21,7 +21,7 @@ import IconLogo from '@/components/icons/IconLogo.vue';
   padding: var(--spacing-sm);
   min-height: 56px;
   background-color: var(--color-el-bg);
-  border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-lg);
   user-select: none;
 }
 

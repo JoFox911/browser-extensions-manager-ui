@@ -15,8 +15,8 @@ defineEmits(['update:modelValue'])
 <style scoped>
 .ui-toggle {
   position: relative;
-  width: 36px;
-  height: 20px;
+  width: 28px;
+  height: 16px;
   display: inline-block;
 }
 
@@ -32,7 +32,7 @@ defineEmits(['update:modelValue'])
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: hsl(226, 25%, 17%);
+  background-color: var(--color-toggle-bg);
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -41,20 +41,20 @@ defineEmits(['update:modelValue'])
 .slider::before {
   content: "";
   position: absolute;
-  height: 14px;
-  width: 14px;
-  left: 3px;
-  bottom: 3px;
+  height: 12px;
+  width: 12px;
+  left: 2px;
+  bottom: 2px;
   background-color: #fff;
   border-radius: 50%;
   transition: transform 0.2s ease;
 }
 
 input:checked + .slider {
-  background-color: hsl(3, 71%, 56%);
+  background-color: var(--red-400);
 }
 
 input:checked + .slider::before {
-  transform: translateX(16px);
+  transform: translateX(12px);
 }
 </style>
