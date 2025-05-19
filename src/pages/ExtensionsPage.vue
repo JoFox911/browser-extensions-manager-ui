@@ -16,10 +16,10 @@
 </template>
 
 <script setup>
-import { useExtensionStore } from '@/stores/extensionStore';
+import { useExtensionStore } from '@/stores/extensionStore'
 
-import ExtensionCard from "@/components/extensions/ExtensionCard.vue";
-import ExtensionsHeader from "@/components/extensions/ExtensionsHeader.vue";
+import ExtensionCard from "@/components/extensions/ExtensionCard.vue"
+import ExtensionsHeader from "@/components/extensions/ExtensionsHeader.vue"
 
 const extensionStore = useExtensionStore()
 </script>

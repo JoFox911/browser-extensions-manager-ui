@@ -2,15 +2,15 @@
   <header class="app-header">
     <div class="logo-container">
       <IconLogo class="app-logo"/>
-      <h1 class="app-title">Extensions</h1>
+      <h1>Extensions</h1>
     </div>
     <ThemeToggle />
   </header>
 </template>
 
 <script setup>
-import ThemeToggle from "@/components/ThemeToggle.vue";
-import IconLogo from '@/components/icons/IconLogo.vue';
+import ThemeToggle from "@/components/ThemeToggle.vue"
+import IconLogo from '@/components/icons/IconLogo.vue'
 </script>
 
 <style scoped>
@@ -18,10 +18,10 @@ import IconLogo from '@/components/icons/IconLogo.vue';
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-sm);
-  min-height: 56px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  min-height: 64px;
   background-color: var(--color-el-bg);
-  border-radius: var(--border-radius-lg);
+  border-radius: var(--border-radius-md);
   user-select: none;
 }
 
@@ -32,12 +32,7 @@ import IconLogo from '@/components/icons/IconLogo.vue';
 }
 
 .app-logo {
-  width: 2rem;
-  height: 2rem;
-}
-
-.app-title {
-  font-size: var(--text-logo);
-  font-weight: var(--font-weight-semibold);
+  width: 2.5rem;
+  height: 2.5rem;
 }
 </style>

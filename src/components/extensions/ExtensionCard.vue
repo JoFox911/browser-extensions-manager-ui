@@ -1,10 +1,10 @@
 <template>
-  <div class="extension-card">
+  <div class="extension-card" role="region" :aria-label="`Extension: ${extension.name}`">
     <div class="extension-data">
       <img :src="extension.logo" :alt="extension.name" class="extension-logo" />
 
       <div class="extension-info">
-        <h3 class="extension-name">{{ extension.name }}</h3>
+        <h3>{{ extension.name }}</h3>
         <p class="extension-description">{{ extension.description }}</p>
       </div>
     </div>
@@ -31,16 +31,19 @@ defineProps({
 
 <style scoped>
 .extension-card {
+  min-height: 172px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: var(--spacing-sm);
   background-color: var(--color-el-bg);
   padding: var(--spacing-md);
   border-radius: var(--border-radius-lg);
   border: 1px solid var(--color-el-border);
-  transition: background-color 0.3s ease;
-  box-shadow: var(--color-box-shadow);
+  transition:
+    background-color 0.3s ease;
+  box-shadow: var(--shadow-default);
 }
 
 .extension-data {
@@ -53,8 +56,8 @@ defineProps({
 }
 
 .extension-logo {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: var(--border-radius-sm);
   object-fit: cover;
 }
@@ -62,19 +65,16 @@ defineProps({
 .extension-info {
   flex: 1;
   text-align: left;
-}
-
-.extension-name {
-  margin: 0;
-  font-size: var(--text-body);
-  font-weight: var(--font-weight-semibold);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxs)
 }
 
 .extension-description {
-  margin: 0.2rem 0 0;
   font-size: var(--text-caption);
   font-weight: var(--font-weight-regular);
-  color: var(--neutral-300);
+  color: var(--color-text-caption);
+  opacity: 0.8;
 }
 
 .extension-controls {

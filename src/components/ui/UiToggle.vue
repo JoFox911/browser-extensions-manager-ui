@@ -1,5 +1,5 @@
 <template>
-  <label class="ui-toggle">
+  <label class="ui-toggle" role="switch" :aria-checked="modelValue.toString()">
     <input type="checkbox" :checked="modelValue" @change="$emit('update:modelValue', $event.target.checked)" />
     <span class="slider" />
   </label>
@@ -18,6 +18,7 @@ defineEmits(['update:modelValue'])
   width: 28px;
   height: 16px;
   display: inline-block;
+  cursor: pointer;
 }
 
 .ui-toggle input {
@@ -35,7 +36,8 @@ defineEmits(['update:modelValue'])
   background-color: var(--color-toggle-bg);
   border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition:
+    background-color 0.2s ease;
 }
 
 .slider::before {
@@ -45,9 +47,10 @@ defineEmits(['update:modelValue'])
   width: 12px;
   left: 2px;
   bottom: 2px;
-  background-color: #fff;
+  background-color: var(--neutral-0);
   border-radius: 50%;
-  transition: transform 0.2s ease;
+  transition:
+    transform 0.2s ease;
 }
 
 input:checked + .slider {

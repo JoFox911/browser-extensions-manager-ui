@@ -2,6 +2,7 @@
   <button
     :class="classes"
     type="button"
+    :aria-pressed="props.active.toString()"
     @click="$emit('press')"
   >
     <span>{{ text }}</span>
@@ -29,15 +30,15 @@ const classes = computed(() => [
   {
     'variant-default': props.variant === 'default' && !props.active,
     'variant-danger': props.variant === 'danger',
-    'is-active': props.active
+    'is-selected': props.active
   }
 ])
 </script>
 
 <style scoped>
 .ui-button {
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-xxs) var(--spacing-sm);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-xs) var(--spacing-md);
   font-size: inherit;
   font-weight: inherit;
   font-family: inherit;
@@ -48,23 +49,19 @@ const classes = computed(() => [
   transition: all 0.3s ease;
   cursor: pointer;
   user-select: none;
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  border-color: var(--color-btn-border);
 }
 
 .ui-button:hover {
   opacity: var(--btn-hover-opacity);
 }
 
-.is-active {
+.is-selected {
   background-color: var(--color-btn-danger-bg);
   color: var(--color-btn-danger-text);
   border-color: var(--color-btn-danger-border);
-}
-
-.variant-default,
-.variant-danger {
-  background-color: var(--color-btn-bg);
-  color: var(--color-btn-text);
-  border-color: var(--color-btn-border);
 }
 
 .variant-default:hover {
@@ -72,7 +69,7 @@ const classes = computed(() => [
 }
 
 .variant-danger:hover,
-.is-active:hover {
+.is-selected:hover {
   background-color: var(--color-btn-danger-bg-hover);
   border-color: var(--color-btn-danger-bg-hover);
   color: var(--color-btn-danger-text);

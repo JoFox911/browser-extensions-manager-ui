@@ -1,0 +1,26 @@
+.dark {
+  --shadow-default: none;
+
+  --color-bg: var(--gradient-dark);
+  --color-text: var(--neutral-0);
+  --color-text-caption: var(--neutral-300);
+  --color-el-bg: var(--neutral-800);
+  --color-el-border: var(--neutral-600);
+  --color-el-bg-variant: var(--neutral-700);
+  --color-el-bg-variant-hover: var(--neutral-600);
+  --color-focus-ring: var(--red-500);
+
+  --btn-hover-opacity: 1;
+
+  --color-btn-bg: var(--neutral-700);
+  --color-btn-bg-hover: var(--neutral-600);
+  --color-btn-text: var(--neutral-0);
+  --color-btn-border: var(--neutral-600);
+
+  --color-btn-danger-bg: var(--red-400);
+  --color-btn-danger-bg-hover: var(--red-500);
+  --color-btn-danger-border: var(--red-400);
+  --color-btn-danger-text: var(--neutral-900);
+
+  --color-toggle-bg: var(--neutral-600);
+}

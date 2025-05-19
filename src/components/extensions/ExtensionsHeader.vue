@@ -1,15 +1,14 @@
 <template>
-  <div class="extensions-toolbar">
-    <h2 class="header-title" aria-label="List of browser extensions">Extensions List</h2>
+  <div class="extensions-toolbar" role="region" aria-label="Extensions toolbar">
+    <h2>Extensions List</h2>
 
     <div class="extensions-filter">
       <UiButton
         v-for="option in options"
         :key="option.value"
-        class="control-btn"
         :text="option.label"
-        :aria-pressed="option.value === extensionStore.filter"
-        :active="option.value === extensionStore.filter"
+        :aria-pressed="isSelected(option.value)"
+        :active="isSelected(option.value)"
         @click="extensionStore.setFilter(option.value)"
       />
     </div>
@@ -18,7 +17,7 @@
 
 <script setup>
 import { useExtensionStore } from '@/stores/extensionStore'
-import UiButton from "@/components/ui/UiButton.vue";
+import UiButton from "@/components/ui/UiButton.vue"
 
 const extensionStore = useExtensionStore()
 
@@ -27,6 +26,8 @@ const options = [
   { value: 'active', label: 'Active' },
   { value: 'inactive', label: 'Inactive' }
 ]
+
+const isSelected = (val) => extensionStore.filter === val
 </script>
 
 <style scoped>
@@ -35,7 +36,7 @@ const options = [
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-md);
   gap: var(--spacing-md);
 }
 
@@ -44,24 +45,10 @@ const options = [
   gap: var(--spacing-xs);
 }
 
-.header-title {
-  font-size: var(--text-heading);
-  font-weight: var(--font-weight-semibold);
-}
-
-.control-btn {
-  font-size: var(--text-small);
-  font-weight: var(--font-weight-medium);
-}
-
-@media (max-width: 600px) {
+@media (max-width: 560px) {
   .extensions-toolbar {
     justify-content: center;
     text-align: center;
   }
-
-  /* .header-title {
-    width: 100%;
-  } */
 }
 </style>

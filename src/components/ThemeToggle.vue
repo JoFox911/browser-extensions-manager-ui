@@ -34,9 +34,9 @@ const tooltip = computed(() =>
   background-color: var(--color-el-bg-variant);
   border: none;
   cursor: pointer;
-  padding: var(--spacing-xs);
+  padding: var(--spacing-sm);
   transition: transform 0.2s ease;
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--border-radius-md);
 }
 
 .theme-toggle:hover {
@@ -44,8 +44,8 @@ const tooltip = computed(() =>
 }
 
 .icon {
-  width: 1rem;
-  height: 1rem;
+  width: 1.3rem;
+  height: 1.3rem;
   display: block;
 }
 </style>

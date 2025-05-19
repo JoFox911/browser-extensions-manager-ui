@@ -16,15 +16,15 @@ import AppHeader from '@/components/AppHeader.vue'
 <style scoped>
 .default-layout {
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 100vw;
 }
 
 .page-content {
-  padding: var(--spacing-lg);
-  max-width: 800px;
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-width: 1200px;
 }
 
 .main-content {

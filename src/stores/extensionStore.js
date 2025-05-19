@@ -1,5 +1,5 @@
-import { defineStore } from 'pinia';
-import extensionsData from '@/data/data.json';
+import { defineStore } from 'pinia'
+import extensionsData from '@/data/data.json'
 
 // Sample data structure for extensions
 // {
@@ -40,4 +40,4 @@ export const useExtensionStore = defineStore('extensionStore', {
       }
     }
   },
-});
+})
