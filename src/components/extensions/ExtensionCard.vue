@@ -1,7 +1,7 @@
 <template>
   <div class="extension-card" role="region" :aria-label="`Extension: ${extension.name}`">
     <div class="extension-data">
-      <img :src="extension.logo" :alt="extension.name" class="extension-logo" />
+      <img :src="baseUrl + extension.logo" :alt="extension.name" class="extension-logo" />
 
       <div class="extension-info">
         <h3>{{ extension.name }}</h3>
@@ -27,6 +27,8 @@ defineProps({
     required: true
   }
 })
+
+const baseUrl = import.meta.env.BASE_URL
 </script>
 
 <style scoped>
