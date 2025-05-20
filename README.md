@@ -12,7 +12,9 @@ In this project, I focused on building a scalable and well-structured frontend a
 
 ♿ Focused on accessibility and semantic HTML, including proper use of ARIA attributes and keyboard-friendly components.
 
-Overall, this project helped me strengthen my skills in building adaptable, maintainable, and modern Vue applications with a clean design system.
+🚀 Automated deployment to GitHub Pages, using GitHub Actions for continuous deployment, dynamic base path configuration via Vite, and branch-based publishing with peaceiris/actions-gh-pages.
+
+Overall, this project helped me strengthen my skills in building adaptable, maintainable, and modern Vue applications with a clean design system and automated deployment pipeline.
 
 
 ## Recommended IDE Setup

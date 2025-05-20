@@ -25,6 +25,7 @@ import AppHeader from '@/components/AppHeader.vue'
 .page-content {
   padding: var(--spacing-lg) var(--spacing-md);
   max-width: 1200px;
+  width: 100%;
 }
 
 .main-content {
