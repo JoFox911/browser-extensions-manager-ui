@@ -1,4 +1,6 @@
-# .
+GH Pages https://jofox911.github.io/browser-extensions-manager-ui/
+
+#  Browser Extension Manager UI
 
 In this project, I focused on building a scalable and well-structured frontend architecture using Vue 3 and Vite. I practiced a number of modern frontend development techniques and tools, including:
 
