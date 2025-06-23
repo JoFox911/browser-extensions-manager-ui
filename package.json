@@ -1,5 +1,5 @@
 {
-  "name": "browser-extensions-manager-ui-main",
+  "name": "browser-extensions-manager-ui",
   "version": "0.0.0",
   "private": true,
   "type": "module",

@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'gh-pages' ? '/browser-extensions-manager-ui-main/' : '/',
+  base: mode === 'gh-pages' ? '/browser-extensions-manager-ui/' : '/',
   plugins: [
     vue(),
     vueDevTools(),
