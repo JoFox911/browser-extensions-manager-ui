@@ -1,5 +1,5 @@
 <template>
-  <div class="extensions-toolbar" role="region" aria-label="Extensions toolbar">
+  <section class="extensions-toolbar" aria-label="Extensions toolbar">
     <h2>Extensions List</h2>
 
     <div class="extensions-filter">
@@ -12,7 +12,7 @@
         @click="extensionStore.setFilter(option.value)"
       />
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

@@ -1,5 +1,5 @@
 <template>
-  <button class="theme-toggle" @click="toggleTheme" :aria-label="tooltip">
+  <button type="button" class="theme-toggle" @click="toggleTheme" :aria-label="tooltip">
     <component :is="iconComponent" class="icon" />
   </button>
 </template>
