@@ -1,5 +1,5 @@
 <template>
-  <div class="extension-card" role="region" :aria-label="`Extension: ${extension.name}`">
+  <section class="extension-card" :aria-label="`Extension: ${extension.name}`">
     <div class="extension-data">
       <img :src="baseUrl + extension.logo" :alt="extension.name" class="extension-logo" />
 
@@ -9,12 +9,11 @@
       </div>
     </div>
 
-
     <div class="extension-controls">
       <UiButton class="remove-btn" text="Remove" variant="danger" @press="$emit('remove')" />
       <UiToggle :model-value="extension.isActive" @update:modelValue="$emit('toggle')" />
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
